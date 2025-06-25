@@ -26,6 +26,6 @@ expone rutas `GET` y `POST` según los requerimientos del desafío.
     node o nodemon server.js
 
 3. Descargar, Instalar y Levantar Frontend:
-    ``bash
+    ```bash
     npm i
     npm run dev
