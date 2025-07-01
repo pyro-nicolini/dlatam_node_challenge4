@@ -22,6 +22,7 @@ Se conecta a una base de datos PostgreSQL y expone rutas `GET`, `POST`, `PUT` y 
 
 ```file
 .env
+```
 
 ## 🛠️ Instrucciones
 
