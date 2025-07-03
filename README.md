@@ -1,6 +1,6 @@
-# 👍 Like Me - Backend con Node.js + Express + PostgreSQL
+# CHALLENGE 5 - Backend con Node.js + Express + PostgreSQL
 
-Aplicación backend que permite listar, crear, eliminar y dar like a posts.  
+Aplicación backend que permite listar, crear, eliminar joyas.  
 Se conecta a una base de datos PostgreSQL y expone rutas `GET`, `POST`, `PUT` y `DELETE` según los requerimientos del desafío.
 
 ---
@@ -16,7 +16,7 @@ Se conecta a una base de datos PostgreSQL y expone rutas `GET`, `POST`, `PUT` y 
 
 ## 🛠️ Instrucciones Previas
 
-1. tener creada una DATABASE en SQL llamada "Likeme" con una TABLA llamada "posts".
+1. tener creada una DATABASE en SQL llamada "joyas" con una TABLA llamada "inventario".
 
 2. Recuerda configurar los datos del objeto Pool de pg. en archivo .env
 
