@@ -5,18 +5,27 @@ const postModel = require("../models/postModel");
 
 
 const getAllPosts = async (req, res) => {
+  try { 
   const { rows } = await postModel.getPosts();
-  res.send(rows);
+  res.status(200).send(rows);
+  console.log(rows)
+} catch (err) {
+  res.status(500).send("Error interno al obtener posts")
+}
 };
 
 const createNewPost = async (req, res) => {
   const { titulo, img, descripcion } = req.body;
+  try { 
   const result = await postModel.createPost(titulo, img, descripcion);
-  res.status(201).json({
-    mensaje: "Post creado con éxito",
-    post: result.rows[0],
-  });
-  console.log(`Post de ${titulo} creado con éxito`);
+    res.status(201).json({
+      mensaje: "Post creado con éxito",
+      post: result.rows[0],
+    });
+    console.log(`Post de ${titulo} creado con éxito`);
+  } catch (err) {
+    res.status(500).send("Error interno al crear un post")
+  }
 };
 
 const likePostById = async (req, res) => {
@@ -38,7 +47,6 @@ const likePostById = async (req, res) => {
 const deletePostById = async (req, res) => {
   const id = parseInt(req.params.id);
   if (isNaN(id)) return res.status(400).send("ID inválido");
-
   try {
     const result = await postModel.deletePost(id);
     if (result.rowCount === 0) return res.status(404).send("Post no encontrado");
